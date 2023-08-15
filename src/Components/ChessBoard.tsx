@@ -25,22 +25,22 @@ function ChessBoard() {
 		return function():void
 		{
 			console.log("fetching for"+loc)
-			fetch("http://localhost:3000/api/v1/games/dev/legalmoves",{
-				method:"POST",
-				headers:{
-					"Content-Type":"application/json",
+			fetch("http://localhost:3000/api/v1/games/dev/legalpositions", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
 				},
-				body:JSON.stringify({
-					location:loc,
-					gameid:localStorage.getItem("gameid")
-				})
-			}).then(k=>k.json()).then(
-				data=>{
-					console.log(data.data.moves)
+				body: JSON.stringify({
+					location: loc,
+					gameid: localStorage.getItem("gameid"),
+				}),
+			})
+				.then((k) => k.json())
+				.then((data) => {
+					console.log(data.data.moves);
 
-					setHighlightedMoves(()=>data.data.moves)
-				}
-			)
+					setHighlightedMoves(() => data.data.moves);
+				});
 		}
 	}
 

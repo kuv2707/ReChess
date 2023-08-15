@@ -47,13 +47,14 @@ function ChessBoardCell({
 		}
 	}
 
-	if (color == "white") color = "#f0d9b5";
-	if (color == "black") color = "#b58863";
+	if (color == "white") color = "#6e788e";
+	if (color == "black") color = "#21252b";
+    if(color=="green" && FEN!="x") color="red"
 	return (
 		<div
 			className={styles.cell}
 			style={{
-				backgroundColor: selected === loc ? "brown" : color,
+				backgroundColor: selected === loc ? "yellow" : color,
 			}}
 			onClick={clickHandler}
 		>
