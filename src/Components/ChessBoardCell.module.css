@@ -1,0 +1,10 @@
+.cell
+{
+    border-radius: 15px;
+    width:5rem;
+    height:5rem;
+}
+.piecePicture
+{
+    width: 100%;
+}
